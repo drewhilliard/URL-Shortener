@@ -7,9 +7,13 @@ app.get('/', function(req, res){
 	res.json({ "server": "online" });
 });
 
-app.post('/api/shortening', function(req, res){
+app.get('/api/v1/shortening', function(req, res){
 	// Route to create and return the shortened URL
-	
+	res.send('all good here');
+});
+
+app.post('/api/v1/shortening', function(req, res){
+	res.json({"api":"online"});
 });
 
 var server = app.listen(3000, function(){
