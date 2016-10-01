@@ -2,7 +2,7 @@ module.exports = function(app){
 	
 	// Route for the homepage
 	app.get('/', function(req, res){
-		res.json({ "server": "online" });
+		res.json({ "api": "online" });
 	});
 
 	// Route for /about page
@@ -11,10 +11,10 @@ module.exports = function(app){
 	});
 
 	// Route to shorten a URL (primary function of application)
-	app.post('/api/v1/shortener/:url', function(req, res){
+	app.post('/api/v1/:url', function(req, res){
 	
 		// Imports the URL shortener module
-		var shorten = require("./modules/shortener.js");
+		var shorten = require("../modules/shortener.js");
 
 		// Calls the shortenUrl function in the shortener module
 		output = shorten.shortenUrl();

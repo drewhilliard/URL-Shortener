@@ -3,14 +3,14 @@
 This is a static API that accepts a standard URL and returns a shortened, randomly generated, unique URL. 
 
 ### Installation
-Clone the repository and initialize NPM. This project only has two dependencies currently:
+Clone the repository and initialize NPM. This project has the following dependencies:
 * express 
 * body-parser
 * mysql
 * sequelize
 
 ### Endpoint and example response
-Currently the only active endpoint is at __/api/v1/shortener/{input}__ where __{input}__ denotes the URL to be shortened. At this time the API only accepts URLs conforming to the following syntax: 
+Currently the only active endpoint is at __/api/v1/{input}__ where __{input}__ denotes the URL to be shortened. At this time the API only accepts URLs conforming to the following syntax: 
 * www.domain.com
 
 Example response in JSON: 
