@@ -7,21 +7,8 @@ var body_parser = require('body-parser');
 // Instantiate express
 var app = express();
 
-// Route for the homepage
-app.get('/', function(req, res){
-	res.json({ "server": "online" });
-});
-
-app.post('/api/v1/shortener/:url', function(req, res){
-	// Imports the URL shortener module
-	var shorten = require("./modules/shortener.js");
-
-	// Calls the shortenUrl function in the shortener module
-	output = shorten.shortenUrl();
-
-	// Responds with the original input and the new short URL in JSON
-	res.json({"longurl": req.params.url, "shorturl": output});
-});
+// Require the router file containing all routes
+var routes = require('./router')(app);
 
 var server = app.listen(3000, function(){
 	console.log('Server online at port 3000');

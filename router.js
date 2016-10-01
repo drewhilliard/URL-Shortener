@@ -1,0 +1,25 @@
+module.exports = function(app){
+	
+	// Route for the homepage
+	app.get('/', function(req, res){
+		res.json({ "server": "online" });
+	});
+
+	// Route for /about page
+	app.get('/about', function(req, res){
+		res.redirect('https://github.com/drewhilliard/URL-Shortener');
+	});
+
+	// Route to shorten a URL (primary function of application)
+	app.post('/api/v1/shortener/:url', function(req, res){
+	
+		// Imports the URL shortener module
+		var shorten = require("./modules/shortener.js");
+
+		// Calls the shortenUrl function in the shortener module
+		output = shorten.shortenUrl();
+
+		// Responds with the original input and the new short URL in JSON
+		res.json({"longurl": req.params.url, "shorturl": output});
+	});
+}
