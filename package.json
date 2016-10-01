@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drewhilliard/Assignment1-Static-API.git"
+    "url": "git+https://github.com/drewhilliard/URL-Shortener.git"
   },
   "author": "Drew Hilliard",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/drewhilliard/Assignment1-Static-API/issues"
+    "url": "https://github.com/drewhilliard/URL-Shortener/issues"
   },
-  "homepage": "https://github.com/drewhilliard/Assignment1-Static-API#readme",
+  "homepage": "https://github.com/drewhilliard/URL-Shortener#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0"

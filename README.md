@@ -14,5 +14,5 @@ Currently the only active endpoint is at __/api/v1/shortening/{input}__ where __
 Example response in JSON: 
 {
   "longurl": "www.google.com",
-  "shorturl": "http://shortening.com/9h4x1za"
+  "shorturl": "http://dhsu.com/9h4x1za"
 }
