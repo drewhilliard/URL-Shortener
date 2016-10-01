@@ -1,11 +1,9 @@
 // Require and instantiate express
 var express = require('express');
+var app = express();
 
 // Require body-parser
 var body_parser = require('body-parser');
-
-// Instantiate express
-var app = express();
 
 // Require the router file containing all routes
 var routes = require('./routes/router')(app);
