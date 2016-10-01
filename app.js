@@ -12,9 +12,9 @@ app.get('/', function(req, res){
 	res.json({ "server": "online" });
 });
 
-app.post('/api/v1/shortening/:url', function(req, res){
+app.post('/api/v1/shortener/:url', function(req, res){
 	// Imports the URL shortener module
-	var shorten = require("./modules/shortening.js");
+	var shorten = require("./modules/shortener.js");
 
 	// Calls the shortenUrl function in the shortener module
 	output = shorten.shortenUrl();
