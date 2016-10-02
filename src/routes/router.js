@@ -14,7 +14,7 @@ module.exports = function(app){
 	app.post('/api/v1/:url', function(req, res){
 	
 		// Imports the URL shortener module
-		var shorten = require("../modules/shortener.js");
+		var shorten = require("../models/shortener.js");
 
 		// Calls the shortenUrl function in the shortener module
 		output = shorten.shortenUrl();
