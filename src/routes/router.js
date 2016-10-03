@@ -1,3 +1,6 @@
+const db = require('../models/db');
+const create = require('../models/create');
+
 module.exports = function(app){
 	
 	// Route for the homepage
@@ -14,7 +17,7 @@ module.exports = function(app){
 	app.post('/api/v1/:url', function(req, res){
 	
 		// Imports the URL shortener module
-		var shorten = require("../models/shortener.js");
+		const shorten = require("../models/shortener.js");
 
 		// Calls the shortenUrl function in the shortener module
 		output = shorten.shortenUrl();
@@ -22,7 +25,11 @@ module.exports = function(app){
 		// Responds with the original input and the new short URL in JSON
 		res.json({"longurl": req.params.url, "shorturl": output});
 
-		// Write to DB here?
+		// Write to database
+		db.url.create({
+			longUrl: req.params.url,
+			shortUrl: output
+		});
 		
 	});
 }

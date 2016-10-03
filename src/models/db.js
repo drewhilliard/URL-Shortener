@@ -15,7 +15,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 	logging: false,
 });
 
-const url = sequelize.define('urls', {
+const url = sequelize.define('url', {
 	longUrl: {
 		type: Sequelize.STRING,
 	},
@@ -30,13 +30,15 @@ exports.sequelize = sequelize;
 exports.url = url;
 
 /*
+
 // DB connection test
 sequelize
-  .authenticate()
-  .then(function(err) {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(function (err) {
-    console.log('Unable to connect to the database:', err);
-  });
-  */
+	.authenticate()
+	.then(function(err) {
+		console.log('Connection has been established successfully.');
+	})
+	.catch(function (err) {
+		console.log('Unable to connect to the database:', err);
+	});
+
+*/
