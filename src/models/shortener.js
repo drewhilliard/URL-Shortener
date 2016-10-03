@@ -7,8 +7,8 @@ exports.shortenUrl = () => {
 	return output;
 };
 
-exports.create = function(payload, err, success) {
-	db.url.create(payload).then(success).catch(err);
+exports.create = (payload, err, success) => {
+	db.urls.create(payload).then(success).catch(err);
 }
 
 // Display all URLs in DB

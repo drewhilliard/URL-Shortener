@@ -23,10 +23,12 @@ module.exports = function(app){
 		// Calls the shortenUrl function in the shortener module
 		output = shorten.shortenUrl();
 
-		// Responds with the original input and the new short URL in JSON
-		res.json({"longurl": req.params.url, "shorturl": output});
-
 		// Write to DB logic here...
+		urls.create({ longUrl: req.params.url, shortUrl: output }, (err) => {
+			res.status(500).json(err);
+		}, (data) => {
+			res.json(data);
+		});
 
 	});
 
@@ -38,5 +40,6 @@ module.exports = function(app){
 			res.json(data);
 		});
 	});
+
 	
 }
