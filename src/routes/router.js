@@ -1,4 +1,5 @@
 const db = require('../models/db');
+const url = require('../models/db');
 const create = require('../models/create');
 
 module.exports = function(app){
@@ -25,11 +26,19 @@ module.exports = function(app){
 		// Responds with the original input and the new short URL in JSON
 		res.json({"longurl": req.params.url, "shorturl": output});
 
-		// Write to database
+		// Supposed to write to DB but is inserting NULL
+		db.url.create(req.params.url, (err) => {
+			res.status(500).json(err);
+		}, (data) => {
+			res.status(200).json(data);
+		});
+
+		/* 
+		// Write to database (this is the wrong way)
 		db.url.create({
 			longUrl: req.params.url,
 			shortUrl: output
 		});
-		
+		*/
 	});
 }
