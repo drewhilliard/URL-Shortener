@@ -1,5 +1,7 @@
 // Require Sequelize
 const Sequelize = require('sequelize');
+
+// Require dotenv (stores DB connection settings)
 require('dotenv').config();
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
 	host: process.env.DB_HOST,
@@ -26,3 +28,15 @@ sequelize.sync();
 
 exports.sequelize = sequelize;
 exports.url = url;
+
+/*
+// DB connection test
+sequelize
+  .authenticate()
+  .then(function(err) {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(function (err) {
+    console.log('Unable to connect to the database:', err);
+  });
+  */

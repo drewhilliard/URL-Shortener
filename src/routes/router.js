@@ -10,7 +10,7 @@ module.exports = function(app){
 		res.redirect('https://github.com/drewhilliard/URL-Shortener');
 	});
 
-	// Route to shorten a URL (primary function of application)
+	// Route to shorten a URL and write it to the database (primary function of application)
 	app.post('/api/v1/:url', function(req, res){
 	
 		// Imports the URL shortener module
@@ -21,5 +21,8 @@ module.exports = function(app){
 
 		// Responds with the original input and the new short URL in JSON
 		res.json({"longurl": req.params.url, "shorturl": output});
+
+		// Write to DB here?
+		
 	});
 }
