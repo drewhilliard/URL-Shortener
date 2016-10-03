@@ -15,7 +15,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 	logging: false,
 });
 
-const url = sequelize.define('url', {
+const urls = sequelize.define('url', {
 	longUrl: {
 		type: Sequelize.STRING,
 	},
@@ -27,7 +27,7 @@ const url = sequelize.define('url', {
 sequelize.sync();
 
 exports.sequelize = sequelize;
-exports.url = url;
+exports.urls = urls;
 
 /*
 

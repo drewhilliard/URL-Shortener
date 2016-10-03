@@ -1,6 +1,6 @@
-const db = require('../models/db');
-const url = require('../models/db');
-const create = require('../models/create');
+const urls = require('../models/shortener');
+const create = require('../models/shortener');
+const findAll = require('../models/shortener');
 
 module.exports = function(app){
 	
@@ -26,19 +26,17 @@ module.exports = function(app){
 		// Responds with the original input and the new short URL in JSON
 		res.json({"longurl": req.params.url, "shorturl": output});
 
-		// Supposed to write to DB but is inserting NULL
-		db.url.create(req.params.url, (err) => {
+		// Write to DB logic here...
+
+	});
+
+	// Route to display all URLS
+	app.get('/api/v1/urls', (req, res) => {
+		urls.findAll((err) => {
 			res.status(500).json(err);
 		}, (data) => {
-			res.status(200).json(data);
+			res.json(data);
 		});
-
-		/* 
-		// Write to database (this is the wrong way)
-		db.url.create({
-			longUrl: req.params.url,
-			shortUrl: output
-		});
-		*/
 	});
+	
 }
