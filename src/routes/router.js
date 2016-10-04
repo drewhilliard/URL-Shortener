@@ -1,7 +1,4 @@
 const urls = require('../models/shortener');
-const create = require('../models/shortener');
-const findAll = require('../models/shortener');
-const find = require('../models/shortener');
 
 module.exports = function(app){
 	
@@ -45,6 +42,29 @@ module.exports = function(app){
 	// Route to display a specific URL based on id
 	app.get('/api/v1/url/:id', (req, res) => {
 		urls.find(req.params.id, (err) => {
+			res.status(500).json(err);
+		}, (data) => {
+			res.json(data);
+		});
+	});
+
+/* work in progress
+	// Route to update a specific URL based on id
+	app.post('/api/v1/url/update/:id', (req, res) => {
+		
+		//req.body.id = req.params.id;
+
+		urls.update(req.body, (err) => {
+			res.status(500).json(err);
+		}, (data) => {
+			res.json(data);
+		});
+	});
+*/
+
+	// Route to delete specific URL based on id
+	app.delete('/api/v1/url/:id', (req, res) => {
+		urls.destroy(req.params.id, (err) => {
 			res.status(500).json(err);
 		}, (data) => {
 			res.json(data);

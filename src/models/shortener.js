@@ -24,3 +24,26 @@ exports.find = (payload, err, success) => {
 		)
 	}).then(success).catch(err);
 }
+
+// WORK IN PROGRESS
+// Update a URL based on id
+exports.update = (payload, err, success) => {
+	db.urls.update({
+		where: (
+			{ id: payload }
+		)	
+	}).then((currentData) => {
+		currentData.updateAttributes(payload).then(success).catch(err);
+	}).catch(err);
+}
+
+// Delete URL based on id
+exports.destroy = (payload, err, success) => {
+	db.urls.destroy({
+		where: {
+			id: payload
+		}
+	}).then((currentData) => {
+		currentData.updateAttributes(payload).then(success).catch(err);
+	}).catch(err);
+}
