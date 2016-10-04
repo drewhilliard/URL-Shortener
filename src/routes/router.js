@@ -1,6 +1,7 @@
 const urls = require('../models/shortener');
 const create = require('../models/shortener');
 const findAll = require('../models/shortener');
+const find = require('../models/shortener');
 
 module.exports = function(app){
 	
@@ -32,7 +33,7 @@ module.exports = function(app){
 
 	});
 
-	// Route to display all URLS
+	// Route to display all URLs
 	app.get('/api/v1/urls', (req, res) => {
 		urls.findAll((err) => {
 			res.status(500).json(err);
@@ -41,5 +42,13 @@ module.exports = function(app){
 		});
 	});
 
-	
+	// Route to display a specific URL based on id
+	app.get('/api/v1/url/:id', (req, res) => {
+		urls.find(req.params.id, (err) => {
+			res.status(500).json(err);
+		}, (data) => {
+			res.json(data);
+		});
+	});
+
 }

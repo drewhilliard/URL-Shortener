@@ -15,3 +15,12 @@ exports.create = (payload, err, success) => {
 exports.findAll = (err, success) => {
   db.urls.findAll().then(success).catch(err);
 }
+
+// Display a URL based on id
+exports.find = (payload, err, success) => {
+	db.urls.find({
+		where: (
+			{ id: payload }
+		)
+	}).then(success).catch(err);
+}
