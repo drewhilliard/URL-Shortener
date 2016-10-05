@@ -25,12 +25,11 @@ exports.find = (payload, err, success) => {
 	}).then(success).catch(err);
 }
 
-// WORK IN PROGRESS
 // Update a URL based on id
 exports.update = (payload, err, success) => {
 	db.urls.find({
 		where: (
-			{ id: payload }
+			{ id: payload.id }
 		)	
 	}).then((currentData) => {
 		currentData.updateAttributes(payload).then(success).catch(err);

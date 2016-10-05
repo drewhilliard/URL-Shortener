@@ -53,10 +53,8 @@ module.exports = (express) => {
 
 	// Route to update a specific URL based on id
 	router.post('/api/v1/url/:id', (req, res) => {
-		
-		req.body.id = req.params.id;
 
-		urls.update(req.params.id, (err) => {
+		urls.update(req.body, (err) => {
 			res.status(500).json(err);
 		}, (data) => {
 			res.json(data);
