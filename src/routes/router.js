@@ -70,6 +70,15 @@ module.exports = (express) => {
 		});
 	});
 
+	// Route to redirect from short URL to original long URL
+	router.get('/go/:id', (req, res) => {
+		urls.find(req.params.id, (err) => {
+			res.status(500).json(err);
+		}, (data) => {
+			res.redirect(data.longUrl);
+		});
+	});
+
 	return router;
 
 }
