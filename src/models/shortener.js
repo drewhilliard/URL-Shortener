@@ -28,7 +28,7 @@ exports.find = (payload, err, success) => {
 // WORK IN PROGRESS
 // Update a URL based on id
 exports.update = (payload, err, success) => {
-	db.urls.update({
+	db.urls.find({
 		where: (
 			{ id: payload }
 		)	
