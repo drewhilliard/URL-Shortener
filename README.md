@@ -14,7 +14,7 @@ Clone the repository and initialize NPM. This project has the following dependen
 #### POST /api/v1/url
 POST URL and receive a shortened version
 
-'''json
+'''javascript
 {
   "id": 1,
   "longUrl": "www.example.com",
@@ -32,7 +32,7 @@ See above for example response.
 #### GET /api/v1/url/:id
 Display a specific record based on id
 
-'''json
+'''javascript
 {
   "id": 8,
   "longUrl": "www.gamerswithjobs.com",
@@ -45,7 +45,7 @@ Display a specific record based on id
 #### POST /api/v1/url/:id
 Update a specific record based on id
 
-'''json
+'''javascript
 {
   "id": 8,
   "longUrl": "http://www.gamerswithjobs.com",
@@ -55,8 +55,8 @@ Update a specific record based on id
 }
 '''
 
-### DELETE /api/v1/url/:id
+#### DELETE /api/v1/url/:id
 Deletes a specific record based on id
 
-### /go/:id
+#### /go/:id
 Redirects to the original long URL based on short URL id
