@@ -65,5 +65,5 @@ Redirects to the original long URL based on short URL id
 Enable debugging mode by setting DEBUG to TRUE when starting the server. Example:
 
 ```
-nodemon src/server.js DEBUG=TRUE
+DEBUG=true nodemon src/server.js
 ```
