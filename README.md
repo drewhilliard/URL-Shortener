@@ -62,4 +62,5 @@ Deletes a specific record based on id
 Redirects to the original long URL based on short URL id
 
 ### Debugging
-Enable debugging mode by setting DEBUG to TRUE when starting the server. Example `nodemon src/server.js DEBUG=TRUE`
+Enable debugging mode by setting DEBUG to TRUE when starting the server.
+Example `nodemon src/server.js DEBUG=TRUE`
