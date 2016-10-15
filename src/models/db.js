@@ -33,7 +33,7 @@ exports.sequelize = sequelize;
 exports.urls = urls;
 
 
-/*
+
 // DB connection test
 sequelize
 	.authenticate()
@@ -43,4 +43,3 @@ sequelize
 	.catch(function (err) {
 		utility.debug('Unable to connect to the database:', err);
 	});
-*/
