@@ -1,6 +1,9 @@
 const body_parser = require('body-parser');
 const urls = require('../models/shortener');
 
+// Require debug utility
+const utility = require('../../tools/debugutility');
+
 module.exports = (express) => {
 
 	const router = express.Router();
@@ -30,7 +33,7 @@ module.exports = (express) => {
 		}, (data) => {
 			res.json(data);
 		});	
-	
+
 	});
 
 	// Route to display all URLs
@@ -39,6 +42,7 @@ module.exports = (express) => {
 			res.status(500).json(err);
 		}, (data) => {
 			res.json(data);
+			utility.debug('All URLs retrieved and returned.');
 		});
 	});
 
@@ -48,6 +52,7 @@ module.exports = (express) => {
 			res.status(500).json(err);
 		}, (data) => {
 			res.json(data);
+			utility.debug('URL with id of ' + req.params.id + ' requested, retrieved and returned.');
 		});
 	});
 
@@ -58,6 +63,7 @@ module.exports = (express) => {
 			res.status(500).json(err);
 		}, (data) => {
 			res.json(data);
+			utility.debug('URL with id of ' + req.params.id + ' updated per POST request.');
 		});
 	});
 
@@ -67,6 +73,7 @@ module.exports = (express) => {
 			res.status(500).json(err);
 		}, (data) => {
 			res.json(data);
+			utility.debug('URL with id of ' + req.params.id + ' was deleted.');
 		});
 	});
 
@@ -76,6 +83,7 @@ module.exports = (express) => {
 			res.status(500).json(err);
 		}, (data) => {
 			res.redirect(data.longUrl);
+			utility.debug('Redirect to URL with id of ' + req.params.id + ' initiated.');
 		});
 	});
 
