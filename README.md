@@ -1,13 +1,28 @@
 # URL Shortener
 ## by Drew Hilliard
-This is a static API that accepts a standard URL and returns a shortened, randomly generated, unique URL. 
+This is a static API that accepts a standard URL and returns a shortened, randomly generated, unique URL.
 
 ### Installation
 Clone the repository and initialize NPM. This project has the following dependencies:
-* express 
+* express
 * body-parser
 * mariadb
 * sequelize
+* dotenv
+
+#### Congifuration
+Create ```.env``` file at root application level to configure a database connection
+```
+DB_NAME=
+DB_USER=
+DB_PASS=
+DB_HOST=
+DB_SCHEMA=
+DB_PORT=
+```
+
+#### Start up
+Start the server with ```node src/server.js``` (See ```nodemon``` for more convenience)
 
 ### Endpoints and example responses
 
