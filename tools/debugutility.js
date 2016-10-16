@@ -5,7 +5,7 @@ const fs = require('fs');
 const timeStamp = new Date();
 
 exports.debug = (message) => {
-	if (process.env.DEBUG) {
-		fs.appendFile('./logs/debug.log', timeStamp + " | " + message + "\n");	
-	};
-}
+  if (process.env.DEBUG) {
+    fs.appendFile('./logs/debug.log', timeStamp + ' | ' + message + '\n');
+  }
+};
