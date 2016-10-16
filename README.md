@@ -10,7 +10,7 @@ Clone the repository and initialize NPM. This project has the following dependen
 * sequelize
 * dotenv
 
-#### Congifuration
+#### Configuration
 Create ```.env``` file at root application level to configure a database connection
 ```
 DB_NAME=
