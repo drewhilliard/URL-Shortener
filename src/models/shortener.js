@@ -1,7 +1,7 @@
 const db = require('./db');
 
 // Require debug utility
-const utility = require('../../tools/debugutility');
+const utility = require('debug-tool-dh');
 
 // Shortens a long URL
 exports.shortenUrl = () => {

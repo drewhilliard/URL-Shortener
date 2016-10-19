@@ -5,7 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 // Require debug utility
-const utility = require('../tools/debugutility');
+const utility = require('debug-tool-dh');
 
 // Instantiate express
 const app = express();

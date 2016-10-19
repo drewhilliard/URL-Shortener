@@ -1,7 +1,7 @@
 const urls = require('../models/shortener');
 
 // Require debug utility
-const utility = require('../../tools/debugutility');
+const utility = require('debug-tool-dh');
 
 module.exports = (express) => {
   const router = express.Router();
