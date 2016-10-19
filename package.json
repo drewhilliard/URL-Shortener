@@ -22,7 +22,7 @@
     "mysql": "2.11.1",
     "sequelize": "3.24.3",
     "dotenv": "2.0.0",
-    "debug-tool-dh": "^1.0.0"
+    "debug-tool-dh": "1.0.2"
   },
   "devDependencies": {
     "eslint": "3.8.1",
