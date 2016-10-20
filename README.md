@@ -6,7 +6,7 @@ This is a static API that accepts a standard URL and returns a shortened, random
 Clone the repository and initialize NPM. This project has the following dependencies:
 * express
 * body-parser
-* mariadb
+* MySQL
 * sequelize
 * dotenv
 
