@@ -1,12 +1,12 @@
 # URL Shortener
 ## by Drew Hilliard
-This is a static API that accepts a standard URL and returns a shortened, randomly generated, unique URL.
+This is an API that accepts a standard URL and returns a shortened, randomly generated, unique URL.
 
 ### Installation
-Clone the repository and initialize NPM. This project has the following dependencies:
+Clone the repository and install the following dependencies:
+* MySQL
 * express
 * body-parser
-* MySQL
 * sequelize
 * dotenv
 
@@ -22,12 +22,16 @@ DB_PORT=
 ```
 
 #### Start up
-Start the server with ```node src/server.js``` (See ```nodemon``` for more convenience)
+Start the server with ```node src/server.js```
 
 ### Endpoints and example responses
 
 #### POST /api/v1/url
 POST URL and receive a shortened version
+
+Send a key/value pair using www-form-urlencoded with the key being ```url``` and the value being a standard URL such as ```https://www.github.com/```
+
+Response:
 
 ```json
 {
@@ -80,5 +84,5 @@ Redirects to the original long URL based on short URL id
 Enable debugging mode by setting DEBUG to TRUE when starting the server. Example:
 
 ```
-DEBUG=true nodemon src/server.js
+DEBUG=true node src/server.js
 ```
